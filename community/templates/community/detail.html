@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{agenda}}</title>
+  </head>
+  <body>
+    <h1>{{agenda}}</h1>
+    <h2>{{agenda.agenda_detail}} {{agenda.pub_date|date:"Y.m.d f"}}</h2>
+
+    <ol>
+      {% for r in reply %}
+        <li>{{r.reply_text}} {{r.pub_date|date:"Y.m.d f"}}</li> <!--04.23 18:00-->
+      {% endfor %}
+    </ol>
+    <form action = "{% url 'community:replysubmit' agenda.agenda_num  %}" method="post">
+      {% csrf_token %}
+      댓글을 입력하세요:<br>
+      <input type="text" name="reply">
+      <input type="submit" value="작성">
+    </form>
+    <a href="/community">돌아가기</a>
+  </body>
+</html>
