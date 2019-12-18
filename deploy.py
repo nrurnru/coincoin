@@ -26,7 +26,7 @@ class AskDjango(object):
 
     def check_nodejs(self):
         if int(os.system('where node')) != 0:
-            self.goto_error('Missing node.js executable, plaease install node.js, if already installed make sure it can be reached from current environment.')
+            self.goto_error('Missing node.js executable, please install node.js, if already installed make sure it can be reached from current environment.')
 
     def check_variables(self):
         log('check variables ...')
