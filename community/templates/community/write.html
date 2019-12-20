@@ -5,7 +5,7 @@
     <title>작성</title>
   </head>
   <body>
-    <img src="img/title_image.png">
+    <img src="static/img/title_image.png">
     <form action = "{% url 'community:submit' %}" method="post">
       {% csrf_token %}
       주제를 입력하세요:<br>
