@@ -4,8 +4,9 @@
     <meta charset="utf-8">
     <title>환영합니다</title>
   </head>
-  <body>
-    <img src="img/title_image.png">
+  <body> 
+    {% load staticfiles %}
+    <img src="{% static 'community/img/title_image.png' %}">
     <ul>
     {% for agenda in agenda_list %}
         <li><a href="/community/{{ agenda.agenda_num }}">{{ agenda.agenda_text }}</a></li>
