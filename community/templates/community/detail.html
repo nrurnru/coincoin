@@ -5,7 +5,7 @@
     <title>{{agenda}}</title>
   </head>
   <body>
-    {% load staticfiles %}
+    {% load static %}
     <img src="{% static 'community/img/title_image.png' %}">
     <h1>{{agenda}}</h1>
     <h2>{{agenda.agenda_detail}} {{agenda.pub_date|date:"Y.m.d f"}}</h2>
