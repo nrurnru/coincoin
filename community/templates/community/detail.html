@@ -8,13 +8,19 @@
     {% load static %}
     <img src="{% static 'community/img/title_image.png' %}">
     <h1>{{agenda}}</h1>
-    <h2>{{agenda.agenda_detail}} {{agenda.pub_date|date:"Y.m.d f"}}</h2>
-
-    <ol>
+    {{agenda.agenda_detail}} {{agenda.pub_date|date:"Y.m.d f"}}<!--내용-->
+    <br>
+    <br>
+      <table border="1">
       {% for r in reply %}
-        <li>{{r.reply_text}} {{r.pub_date|date:"Y.m.d f"}}</li> <!--04.23 18:00-->
-      {% endfor %}
-    </ol>
+        <tr>
+          <td>
+            {{r.reply_text}} {{r.pub_date|date:"Y.m.d f"}} <!--04.23 18:00-->
+          </td>
+        </tr>
+      {% endfor %}  
+      </table>
+      
     <form action = "{% url 'community:replysubmit' agenda.agenda_num  %}" method="post">
       {% csrf_token %}
       댓글을 입력하세요:<br>
