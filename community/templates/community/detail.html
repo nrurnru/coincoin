@@ -1,22 +1,28 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>{{agenda}}</title>
+    <link rel="stylesheet" href='{% static "community/css/bootstrap.css" %}'>
   </head>
   <body>
-    {% load static %}
     <img src="{% static 'community/img/title_image.png' %}">
     <h1>{{agenda}}</h1>
     {{agenda.agenda_detail}} {{agenda.pub_date|date:"Y.m.d f"}}<!--내용-->
     <br>
     <br>
-      <table border="1">
+      <table class="table table-striped">
+        <th>번호</th>
+        <th>제목</th>
+        <th>시간</th>
       {% for r in reply %}
         <tr>
-          <td>
-            {{r.reply_text}} {{r.pub_date|date:"Y.m.d f"}} <!--04.23 18:00-->
-          </td>
+          
+          <td>{{ forloop.counter }} </td>
+          <td>{{r.reply_text}}<!--04.23 18:00--></td>
+          <td>{{r.pub_date|date:"Y.m.d f"}} </td>
+
         </tr>
       {% endfor %}  
       </table>
@@ -25,8 +31,11 @@
       {% csrf_token %}
       댓글을 입력하세요:<br>
       <input type="text" name="reply">
-      <input type="submit" value="작성">
+      <input type="submit" value="작성" class="btn btn-primary" >
     </form>
-    <a href="/community">돌아가기</a>
+    <a href="/community"><button type="button" class="btn btn-primary">돌아가기</button></a>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src='{% static "community/js/bootstrap.js" %}'></script>
   </body>
 </html>
