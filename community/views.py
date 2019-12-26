@@ -7,7 +7,7 @@ import datetime
 # Create your views here.
 
 def index(request):
-    agenda_list = Agenda.objects.all().order_by('-pub_date')
+    agenda_list = Agenda.objects.all().order_by('-agenda_num')
     context = {'agenda_list': agenda_list}
     return render(request, 'community/index.html', context)
 
