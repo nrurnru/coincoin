@@ -21,7 +21,7 @@ def write(request):
     return render(request, 'community/write.html')
 
 def submit(request):
-    rows = Agenda.objects.order_by('pub_date').last()
+    rows = Agenda.objects.order_by('agenda_num').last()
     Agenda.objects.create(agenda_text = request.POST['title'], agenda_detail = request.POST['detail'] ,pub_date=datetime.datetime.now(), agenda_num=(rows.agenda_num)+1).save()
     return HttpResponseRedirect(reverse('community:index'))
 
