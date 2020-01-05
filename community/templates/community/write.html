@@ -1,17 +1,37 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>작성</title>
+    <link rel="stylesheet" href='{% static "community/css/bootstrap.css" %}'>
   </head>
   <body>
+    <p class="text-center"><img src="{% static 'community/img/title_image.png' %}"></p>
+    <br>
+    <p class="text-center"><strong>새로운 글 작성<strong></p>
+    <br>
     <form action = "{% url 'community:submit' %}" method="post">
       {% csrf_token %}
-      주제를 입력하세요:<br>
-      <input type="text" name="title"><br>
-      내용을 입력하세요:<br>
-      <input type="text" name="detail"><br>
-      <input type="submit" value="작성">
-    </form> 
+      <table class="table">
+          
+        <tr>
+          <th><p class="text-center">주제</p></th>
+          <td><input type="text" name="title" style="border:1px solid #bbbbbb; width:90%; height:35px; padding-left:5px; "></td>
+        </tr>
+        <tr>
+          <th><p class="text-center">작성자</p></th>
+          <td><input type="text" name="nickname" style="border:1px solid #bbbbbb; width:90%; height:35px;padding-left:5px;"></td>
+        </tr>
+        <tr>
+          <th><p class="text-center">내용</p></th>
+          <td><input type="text" name="detail" style=" border:1px solid #bbbbbb; width:90%; height:300px;padding-left:5px; padding-top:5px "></td>
+        </tr>
+      </table>
+      <p class="text-center"><input type="submit" value="작성" class="btn btn-primary"> <a href="/"><button type="button" class="btn btn-secondary">돌아가기</button></a></p>
+
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src='{% static "community/js/bootstrap.js" %}'></script> 
   </body>
 </html>

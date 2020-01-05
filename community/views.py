@@ -22,7 +22,7 @@ def write(request):
 
 def submit(request):
     rows = Agenda.objects.order_by('agenda_num').last()
-    Agenda.objects.create(agenda_text = request.POST['title'], agenda_detail = request.POST['detail'] ,pub_date=datetime.datetime.now(), agenda_num=(rows.agenda_num)+1).save()
+    Agenda.objects.create(agenda_text = request.POST['title'], agenda_detail = request.POST['detail'] ,pub_date=datetime.datetime.now(), agenda_num=(rows.agenda_num)+1, agenda_nickname=request.POST['nickname']).save()
     return HttpResponseRedirect(reverse('community:index'))
 
 def replysubmit(request, agenda_id):

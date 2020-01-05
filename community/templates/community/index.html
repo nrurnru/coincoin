@@ -15,11 +15,13 @@
     <table class="table table-hover table-bordered" >
     <th>번호</th>
     <th>주제</th>
+    <th>작성자</th>
     <th>시간</th>
     {% for agenda in agenda_list %} 
       <tr onclick=" location.href='/{{ agenda.agenda_num }}'">
           <td>{{ agenda.agenda_num }}</td>
           <td>{{ agenda.agenda_text }}</td>
+          <td>{{ agenda.agenda_nickname }} </td>
           <td>{{ agenda.pub_date|date:"Y.m.d f" }}</td>
       </tr>
       </a>

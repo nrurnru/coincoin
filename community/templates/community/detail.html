@@ -7,11 +7,12 @@
     <link rel="stylesheet" href='{% static "community/css/bootstrap.css" %}'>
   </head>
   <body>
-    <img src="{% static 'community/img/title_image.png' %}">
+    <br>
+    <p class="text-center"><img src="{% static 'community/img/title_image.png' %}"></p>
+    <br>
     <h1>{{agenda}}</h1>
     {{agenda.agenda_detail}} {{agenda.pub_date|date:"Y.m.d f"}}<!--내용-->
     <br>
-    
     <br>
       <table class="table table-striped">
         <th>번호</th>
