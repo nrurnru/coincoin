@@ -17,7 +17,7 @@
     <th>주제</th>
     <th>시간</th>
     {% for agenda in agenda_list %} 
-      <tr onclick=" location.href='/community/{{ agenda.agenda_num }}'">
+      <tr onclick=" location.href='/{{ agenda.agenda_num }}'">
           <td>{{ agenda.agenda_num }}</td>
           <td>{{ agenda.agenda_text }}</td>
           <td>{{ agenda.pub_date|date:"Y.m.d f" }}</td>
@@ -27,7 +27,7 @@
     
     </table>
 
-    <p class="text-center"><a href="/community/write"><button class="btn btn-primary">새글쓰기</button></a></p>
+    <p class="text-center"><a href="/write"><button class="btn btn-primary">새글쓰기</button></a></p>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
