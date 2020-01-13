@@ -25,7 +25,7 @@ SECRET_KEY = 'iu3((2)uzbe5@u_5_i1)4-yjje@1ckh=760ij63z00e%+fis1('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['104.43.254.102', '127.0.0.1', "coin3.azurewebsites.net", 'coinwebapp.azurewebsites.net', '52.231.32.120']
+ALLOWED_HOSTS = ['104.43.254.102', '127.0.0.1', "coin3.azurewebsites.net", 'coinwebapp.azurewebsites.net', '52.231.32.120', 'coincoin.co.in']
 
 
 # Application definition
